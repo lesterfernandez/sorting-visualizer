@@ -6,7 +6,7 @@ import { animateDivs, animateMerge } from "./animate";
 
 const initVals: Settings = {
   algoType: "merge sort",
-  arrayLen: 75,
+  arrayLen: 125,
   delay: 5,
 };
 
