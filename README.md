@@ -13,8 +13,9 @@ I may add more algorithms to this project if other sorting methods peak my inter
 
 ## How to run
 
-`git clone` this repository
-run `yarn start` or `npm start`
+- `git clone` this repository
+- run `yarn` or `npm install`
+- run `yarn start` or `npm start`
 
 ## Video
 
