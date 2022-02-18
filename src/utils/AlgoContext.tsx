@@ -6,8 +6,8 @@ import { animateDivs, animateMerge } from "./animate";
 
 const initVals: Settings = {
   algoType: "merge sort",
-  arrayLen: 25,
-  delay: 15,
+  arrayLen: 75,
+  delay: 5,
 };
 
 export const Context = createContext<SettingsContext>({
