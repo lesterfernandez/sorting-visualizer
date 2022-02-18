@@ -13,9 +13,13 @@ I may add more algorithms to this project if other sorting methods peak my inter
 
 ## How to run
 
-git clone this repository
-run yarn start or npm start
+`git clone` this repository
+run `yarn start` or `npm start`
 
 ## Video
 
 This entire project was built in one sitting and recorded. The video is publicly availble and features commentary on the build process.
+
+## NOTE:
+
+**If you came here from YouTube**, please note that I did some minor refactoring and orginization. I did not include this process in the video for the sake of time.
