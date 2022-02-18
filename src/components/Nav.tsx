@@ -1,15 +1,18 @@
 import { useContext } from "react";
-import { Algo, Context } from "./utils/AlgoContext";
+import { Context } from "../utils/AlgoContext";
+import { Algo } from "../utils/AlgoContext.types";
+
+type InputChangeHandler = React.ChangeEventHandler<HTMLInputElement>;
 
 const Nav = () => {
   const { sort, settings, setSettings } = useContext(Context);
 
-  const onArrayChange: React.ChangeEventHandler<HTMLInputElement> = e => {
+  const onArrayChange: InputChangeHandler = e => {
     if (!setSettings) return;
     setSettings(c => ({ ...c, arrayLen: +e.target.value * 5 }));
   };
 
-  const onDelayChange: React.ChangeEventHandler<HTMLInputElement> = e => {
+  const onDelayChange: InputChangeHandler = e => {
     if (!setSettings) return;
     setSettings(c => ({ ...c, delay: +e.target.value }));
   };

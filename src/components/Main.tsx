@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Context, ItemsContext } from "./utils/AlgoContext";
+import { Context, ItemsContext } from "../utils/AlgoContext";
 
 const Main = () => {
   const { items } = useContext(ItemsContext);

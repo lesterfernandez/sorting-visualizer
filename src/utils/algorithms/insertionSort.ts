@@ -1,6 +1,6 @@
 export const getInsertionSortAnims = (items: number[]) => {
   const newArr = [...items];
-  const animArr = [[1]];
+  const animArr: number[][] = [[]];
   for (let i = 1; i < newArr.length; i++) {
     let j = i;
     while (j > 0 && newArr[j] < newArr[j - 1]) {

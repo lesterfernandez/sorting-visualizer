@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import AlgoContext from "./components/utils/AlgoContext";
 import "./index.css";
+import AlgoContext from "./utils/AlgoContext";
 
 ReactDOM.render(
   <React.StrictMode>
