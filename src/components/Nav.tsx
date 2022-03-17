@@ -23,9 +23,9 @@ const Nav = () => {
   };
 
   return (
-    <nav className="w-screen bg-gray-300 grid grid-flow-row">
-      <div className="flex items-center justify-center w-full my-2 gap-5">
-        <div>
+    <nav className="w-screen bg-gray-300 grid">
+      <div className="flex items-center justify-center w-5/6 max-w-4xl my-2 gap-5">
+        <div className="flex flex-wrap justify-center">
           <button
             className={`border border-teal-100 shadow-md py-2 px-4 transition-all active:scale-95 ${
               settings.algoType === "merge sort" && "text-purple-500"
@@ -36,11 +36,28 @@ const Nav = () => {
           </button>
           <button
             className={`border border-teal-100 shadow-md py-2 px-4 transition-all active:scale-95 ${
-              settings.algoType === "insertion sort" && "text-purple-500"
+              settings.algoType === "insertion sort" &&
+              "text-purple-500"
             }`}
             onClick={() => onAlgoChange("insertion sort")}
           >
             Insertion Sort
+          </button>
+          <button
+            className={`border border-teal-100 shadow-md py-2 px-4 transition-all active:scale-95 ${
+              settings.algoType === "heap sort" && "text-purple-500"
+            }`}
+            onClick={() => onAlgoChange("heap sort")}
+          >
+            Heap Sort
+          </button>
+          <button
+            className={`border border-teal-100 shadow-md py-2 px-4 transition-all active:scale-95 ${
+              settings.algoType === "quick sort" && "text-purple-500"
+            }`}
+            onClick={() => onAlgoChange("quick sort")}
+          >
+            Quick Sort
           </button>
         </div>
         <button
@@ -68,7 +85,7 @@ const Nav = () => {
           type="range"
           name="delay"
           id="delay"
-          className="w-full max-w-2xl"
+          className="w-full max-w-2xl z-10"
           min={1}
           defaultValue={5}
           onChange={onDelayChange}

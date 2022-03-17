@@ -1,7 +1,14 @@
 import { createContext, useEffect, useState } from "react";
-import { Algo, Items, Settings, SettingsContext } from "./AlgoContext.types";
+import {
+  Algo,
+  Items,
+  Settings,
+  SettingsContext,
+} from "./AlgoContext.types";
+import { getHeapSortAnims } from "./algorithms/heapSort";
 import { getInsertionSortAnims } from "./algorithms/insertionSort";
 import { getMergeSortAnims } from "./algorithms/mergeSort";
+import { getQuickSortAnims } from "./algorithms/quickSort";
 import { animateDivs, animateMerge } from "./animate";
 
 const initVals: Settings = {
@@ -46,7 +53,24 @@ const AlgoContext: React.FC<Props> = ({ children }) => {
         getMergeSortAnims(nums, aux, arr, 0, items.length - 1);
         animateMerge({ newArr: nums, arr, setItems, settings });
         break;
-      default:
+      case "heap sort":
+        const { heapSorted, heapSortAnims } = getHeapSortAnims(items);
+        animateDivs({
+          newArr: heapSorted,
+          arr: heapSortAnims,
+          setItems,
+          settings,
+        });
+        break;
+      case "quick sort":
+        const { quickSorted, quickSortAnims } =
+          getQuickSortAnims(items);
+        animateDivs({
+          newArr: quickSorted,
+          arr: quickSortAnims,
+          setItems,
+          settings,
+        });
         break;
     }
   };
