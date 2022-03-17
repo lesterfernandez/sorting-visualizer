@@ -24,7 +24,7 @@ const Nav = () => {
 
   return (
     <nav className="w-screen bg-gray-300 grid">
-      <div className="flex items-center justify-center w-5/6 max-w-4xl my-2 gap-5">
+      <div className="flex items-center justify-center w-5/6 max-w-4xl mx-auto my-2 gap-5">
         <div className="flex flex-wrap justify-center">
           <button
             className={`border border-teal-100 shadow-md py-2 px-4 transition-all active:scale-95 ${
