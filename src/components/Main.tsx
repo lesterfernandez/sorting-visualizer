@@ -1,12 +1,12 @@
 import { useContext } from "react";
-import { Context, ItemsContext } from "../utils/AlgoContext";
+import { ItemsContext, SettingsContext } from "../utils/AlgoContext";
 
 const Main = () => {
   const { items } = useContext(ItemsContext);
-  const { settings } = useContext(Context);
+  const { settings } = useContext(SettingsContext);
 
   return (
-    <section className="row-span-5">
+    <section className="[grid-row:4/-1] sm:[grid-row:3/-1]">
       <div className="flex w-full h-full items-end overflow-hidden">
         {items.map((item, idx) => (
           <div

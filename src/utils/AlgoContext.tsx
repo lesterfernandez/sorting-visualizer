@@ -1,10 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import {
-  Algo,
-  Items,
-  Settings,
-  SettingsContext,
-} from "./AlgoContext.types";
+import { Algo, ISettingsContext, Items, Settings } from "./AlgoContext.types";
 import { getHeapSortAnims } from "./algorithms/heapSort";
 import { getInsertionSortAnims } from "./algorithms/insertionSort";
 import { getMergeSortAnims } from "./algorithms/mergeSort";
@@ -17,7 +12,7 @@ const initVals: Settings = {
   delay: 5,
 };
 
-export const Context = createContext<SettingsContext>({
+export const SettingsContext = createContext<ISettingsContext>({
   settings: initVals,
   sort: () => {},
 });
@@ -63,8 +58,7 @@ const AlgoContext: React.FC<Props> = ({ children }) => {
         });
         break;
       case "quick sort":
-        const { quickSorted, quickSortAnims } =
-          getQuickSortAnims(items);
+        const { quickSorted, quickSortAnims } = getQuickSortAnims(items);
         animateDivs({
           newArr: quickSorted,
           arr: quickSortAnims,
@@ -77,9 +71,9 @@ const AlgoContext: React.FC<Props> = ({ children }) => {
 
   return (
     <ItemsContext.Provider value={{ items, setItems }}>
-      <Context.Provider value={{ sort, settings, setSettings }}>
+      <SettingsContext.Provider value={{ sort, settings, setSettings }}>
         {children}
-      </Context.Provider>
+      </SettingsContext.Provider>
     </ItemsContext.Provider>
   );
 };

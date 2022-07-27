@@ -1,8 +1,4 @@
-export type Algo =
-  | "merge sort"
-  | "insertion sort"
-  | "heap sort"
-  | "quick sort";
+export type Algo = "merge sort" | "insertion sort" | "heap sort" | "quick sort";
 
 export interface Settings {
   algoType: Algo;
@@ -10,11 +6,11 @@ export interface Settings {
   delay: number;
 }
 
-export type SettingsContext = {
+export interface ISettingsContext {
   settings: Settings;
   setSettings?: React.Dispatch<React.SetStateAction<Settings>>;
   sort: (algoType: Algo) => void;
-};
+}
 
 export type Items = {
   items: number[];
